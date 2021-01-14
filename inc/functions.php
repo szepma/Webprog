@@ -1,7 +1,8 @@
 <?php
 
 function printMenu() {
-    echo '<li><a href="index.php?page=home">Főoldal</a></li>';
+    echo '<li><a href="index.php?page=home">Főoldal</a></li>
+        <li><a href="index.php?page=about">Rólunk</a></li>';
 }
 
 function connectDatabase() {
