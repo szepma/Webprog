@@ -1,29 +1,60 @@
 @media (prefers-color-scheme: light) {
     body {
         background-color: white;
-        color: black;
+        color: #060607;
     }
+
+    nav a {
+        color: #767e8b;
+    }
+
+    nav a:hover {
+        color: #060607;
+    }
+
+    .home-link a {
+        color: #060607;
+    }
+
+    .home-link:hover {
+        background: #f4f5f6;
+        color: #767e8b;
+    }    
 }
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: black;
-        color: white;
+        background-color: #363840;
+        color: #8e9198;
+    }
+
+    nav a {
+        color: #8e9198;
+    }
+
+    nav a:hover {
+        color: #fff;
+    }
+
+    .home-link a {
+        color: #fff;
+    }
+
+    .home-link:hover {
+        background:  #3a3c45;
+        color: #8e9198;
     }
 }
 
 nav a {
     cursor: pointer;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .home-link {
     cursor: pointer;
-    transition: background 0.3s;
-}
-
-.home-link:hover {
-    background: rgba(0, 0, 0, 0.5);
+    transition: background 0.3s, color 0.3s;
 }
 
 .home-link a {

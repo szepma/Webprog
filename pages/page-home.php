@@ -16,7 +16,7 @@ if (!isset($_GET['read'])) {
         $year = $record['year'];
 
         echo '<div class="home-link">
-                <a href="index.php?read='. $id .'">
+                <a class="home-link" href="index.php?read='. $id .'">
                     <h3>'. $make .' '. $model .'</h3>
                     <p>'. $year .'</p>
                 </a>
