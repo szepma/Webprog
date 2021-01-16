@@ -41,7 +41,6 @@ if (isset($_POST['send'])) {
         echo '<p>Az értékelés rögzítésre került!</p>';
     }
 }
-
 ?>
 
 <form method="post">
