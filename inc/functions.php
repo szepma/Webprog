@@ -24,7 +24,7 @@ function printReviews($readId) {
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
     if ($result) {
-        echo '<a href="index.php?page=review&read='. $readId .'">Értékelés írása</a>';
+        echo '<a class="car-page-link" href="index.php?page=review&read='. $readId .'">Értékelés írása</a>';
 
         foreach ($result as $record) {
             $id = $record['review_id'];
@@ -32,7 +32,7 @@ function printReviews($readId) {
             $grade = $record['grade'];
             $message = $record['message'];
 
-            echo '<div>
+            echo '<div class="car-review">
                     <h4>Értékelés: '. $grade .'</h4>
                     <p>'. $message .'</p>
                 </div>';
@@ -40,7 +40,7 @@ function printReviews($readId) {
     }
     else {
         echo '<p>Még nincs értékelés</p>
-            <a href="/page-review.php">Legyél te az első!</a>';
+            <a class="car-page-link" href="index.php?page=review&read='. $readId .'">Legyél te az első!</a>';
     }
 }
 
@@ -49,8 +49,24 @@ function printCarDetails($record) {
     $model = $record['model'];
     $year = $record['year'];
 
-    echo '<h3>'. $make .' '. $model .'</h3>
-        <p>'. $year .'</p>';
+    echo '<div class="car-page-details">
+            <h3>'. $make .' '. $model .'</h3>
+            <p>'. $year .'</p>
+        </div>';
+}
+
+function getCarName($id) {
+    $db = connectDatabase();
+    $sql = "SELECT make, model FROM car WHERE id=:id";
+
+    $query = $db->prepare($sql);
+    $query->execute(['id' => $id]);
+    $record = $query->fetch(PDO::FETCH_ASSOC);
+
+    $make = $record['make'];
+    $model = $record['model'];
+
+    return $make .' '. $model;
 }
 
 ?>

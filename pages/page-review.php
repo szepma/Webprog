@@ -5,6 +5,8 @@ $db = connectDatabase();
 $valEmail = "";
 $valMessage = "";
 
+$car = getCarName($_GET['read']);
+
 if (isset($_POST['send'])) {
     $email = trim($_POST['email']);
     $grade = trim($_POST['grade']);
@@ -40,14 +42,16 @@ if (isset($_POST['send'])) {
     }
 }
 
-echo '<form method="post">
+echo '<h2 class="review-title">'. $car .'</h2>
 
-    <div>
+<form method="post">
+
+    <div class="review-div">
         <h4>Email cím</h4>
         <input name="email" type="email" value="'. $valEmail .'">
     </div>
 
-    <div>
+    <div class="review-div">
         <h4>Mennyire elégedett?</h4>
         <select name="grade">
             <option value="5">5</option>
@@ -58,7 +62,7 @@ echo '<form method="post">
         </select>
     </div>
 
-    <div>
+    <div class="review-div">
         <h4>Szöveges értékelés</h4>
         <input name="message" type="text" value="'. $valMessage .'">
     </div>
