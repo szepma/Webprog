@@ -3,7 +3,6 @@
 $db = connectDatabase();
 
 $valEmail = "";
-$valGrade = "";
 $valMessage = "";
 
 if (isset($_POST['send'])) {
@@ -20,7 +19,6 @@ if (isset($_POST['send'])) {
     
     if ($error) {
         $valEmail = $email;
-        $valGrade = $grade;
         $valMessage = $message;
 
         echo '<p>Hiba! '. $error .'</p>';
@@ -41,13 +39,12 @@ if (isset($_POST['send'])) {
         echo '<p>Az értékelés rögzítésre került!</p>';
     }
 }
-?>
 
-<form method="post">
+echo '<form method="post">
 
     <div>
         <h4>Email cím</h4>
-        <input name="email" type="email">
+        <input name="email" type="email" value="'. $valEmail .'">
     </div>
 
     <div>
@@ -63,9 +60,11 @@ if (isset($_POST['send'])) {
 
     <div>
         <h4>Szöveges értékelés</h4>
-        <input name="message" type="text">
+        <input name="message" type="text" value="'. $valMessage .'">
     </div>
 
     <input type="submit" name="send" value="Küldés">
 
-</form>
+</form>';
+
+?>
