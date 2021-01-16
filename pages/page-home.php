@@ -15,10 +15,12 @@ if (!isset($_GET['read'])) {
         $model = $record['model'];
         $year = $record['year'];
 
-        echo '<a href="index.php?read='. $id .'">
-            <h3>'. $make .' '. $model .'</h3>
-            <p>'. $year .'</p>
-            </a>';
+        echo '<div class="home-link">
+                <a href="index.php?read='. $id .'">
+                    <h3>'. $make .' '. $model .'</h3>
+                    <p>'. $year .'</p>
+                </a>
+            </div>';
     }
 }
 /* CAR-PAGE */

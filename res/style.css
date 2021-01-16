@@ -8,6 +8,20 @@ body {
     color: white;
 }
 
-body a {
+nav a {
     cursor: pointer;
+    text-decoration: none;
+}
+
+.home-link {
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.home-link:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.home-link a {
+    text-decoration: none;
 }
