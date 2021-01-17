@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title><?php getTitle($_GET['read']); ?></title>
+        <title><?php getTitle(); ?></title>
         <link href="res/style.css" rel="stylesheet" type="text/css">
     </head>
     <body>

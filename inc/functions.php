@@ -55,7 +55,8 @@ function printCarDetails($record) {
         </div>';
 }
 
-function getTitle($id) {
+function getTitle() {
+    $id = $_GET['read'];
 
     if ($id != NULL) {
         $db = connectDatabase();
