@@ -55,4 +55,52 @@ function printCarDetails($record) {
         </div>';
 }
 
+function getTitle($id) {
+
+    if ($id != NULL) {
+        $db = connectDatabase();
+        $sql = "SELECT make, model FROM car WHERE id=:id";
+
+        $query = $db->prepare($sql);
+        $query->execute(['id' => $id]);
+        $record = $query->fetch(PDO::FETCH_ASSOC);
+
+        $make = $record['make'];
+        $model = $record['model'];
+
+        if ($_GET['page'] == "review") {
+            echo $make .' '. $model .' | Értékelés';
+        }
+        else {
+            echo $make .' '. $model;
+        }
+
+    }
+    else {
+        if ($_GET['page'] == "home") {
+            echo 'Főoldal';
+        }
+        elseif ($_GET['page'] == "about") {
+            echo 'Rólunk';
+        }
+        else {
+            echo 'Autókereskedő';
+        }
+    }
+}
+
+function getCarName($id) {
+    $db = connectDatabase();
+    $sql = "SELECT make, model FROM car WHERE id=:id";
+
+    $query = $db->prepare($sql);
+    $query->execute(['id' => $id]);
+    $record = $query->fetch(PDO::FETCH_ASSOC);
+
+    $make = $record['make'];
+    $model = $record['model'];
+
+    return $make .' '. $model;
+}
+
 ?>
