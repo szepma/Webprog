@@ -55,18 +55,4 @@ function printCarDetails($record) {
         </div>';
 }
 
-function getCarName($id) {
-    $db = connectDatabase();
-    $sql = "SELECT make, model FROM car WHERE id=:id";
-
-    $query = $db->prepare($sql);
-    $query->execute(['id' => $id]);
-    $record = $query->fetch(PDO::FETCH_ASSOC);
-
-    $make = $record['make'];
-    $model = $record['model'];
-
-    return $make .' '. $model;
-}
-
 ?>
