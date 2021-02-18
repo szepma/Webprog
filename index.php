@@ -21,5 +21,5 @@ else {
 
 include "pages/end.php";
 
-// ez új
+// ez új 
 ?>
